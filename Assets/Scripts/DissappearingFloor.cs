@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DissappearingFloor : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float dissappearingTime;
     void Start()
     {
         
@@ -20,7 +20,7 @@ public class DissappearingFloor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject,1.5f);
+            Destroy(gameObject,dissappearingTime);
         }
     }
 }

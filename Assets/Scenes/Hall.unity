@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -67,6 +67,9 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -1383,7 +1386,7 @@ MeshCollider:
   m_Mesh: {fileID: 4196161430825003242, guid: 5e0ba1d4c55294e4295907db13758724, type: 3}
 --- !u!95 &552383756
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1397,7 +1400,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -2211,7 +2213,7 @@ MeshCollider:
   m_Mesh: {fileID: 4196161430825003242, guid: 5e0ba1d4c55294e4295907db13758724, type: 3}
 --- !u!95 &1421984898
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2225,7 +2227,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -2818,7 +2819,7 @@ MeshCollider:
   m_Mesh: {fileID: 4196161430825003242, guid: 5e0ba1d4c55294e4295907db13758724, type: 3}
 --- !u!95 &1900741052
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2832,7 +2833,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -3318,7 +3318,7 @@ MeshCollider:
   m_Mesh: {fileID: 4196161430825003242, guid: 5e0ba1d4c55294e4295907db13758724, type: 3}
 --- !u!95 &2029322780
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3332,7 +3332,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -3471,8 +3470,8 @@ GameObject:
   - component: {fileID: 1711813855111472197}
   - component: {fileID: 3469287838033514640}
   - component: {fileID: 3469287838033514641}
-  - component: {fileID: 3469287838033514642}
   - component: {fileID: 3469287838033514643}
+  - component: {fileID: 3469287838033514644}
   m_Layer: 0
   m_Name: Final Door
   m_TagString: Untagged
@@ -3593,7 +3592,7 @@ MeshFilter:
   m_Mesh: {fileID: 4196161430825003242, guid: 5e0ba1d4c55294e4295907db13758724, type: 3}
 --- !u!95 &3469287838033514640
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3607,7 +3606,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -3635,19 +3633,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4196161430825003242, guid: 5e0ba1d4c55294e4295907db13758724, type: 3}
---- !u!114 &3469287838033514642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147563709840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 548d4641d08904744a5835cca22838a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  action: Press N to open
 --- !u!65 &3469287838033514643
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3669,6 +3654,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.02064486, y: 0.020028017, z: 0.027801393}
   m_Center: {x: 0.00040662687, y: 0.014755978, z: 0.013900667}
+--- !u!114 &3469287838033514644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147563709840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a873fdf7e18d0f446881260a42fe49c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeyData: {fileID: 11400000, guid: 8a56508b2afc32a4fa11579722208a02, type: 2}
+  action: Press N to open
 --- !u!33 &5148155698728138556
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3685,6 +3684,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3428515492182756414, guid: 5aed9342f96aaba45ad76f5a34f954d5, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5122088631762209560, guid: 5aed9342f96aaba45ad76f5a34f954d5, type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6401724504834304985, guid: 5aed9342f96aaba45ad76f5a34f954d5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
