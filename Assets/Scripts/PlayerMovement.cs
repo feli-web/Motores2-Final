@@ -7,9 +7,10 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
     Animator anim;
     GameObject model;
-    public bool canMove;
 
     public float speed;
+
+    public bool canMove;
     void Start()
     {
         canMove = true;
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        rb.velocity = new Vector3(x * speed,rb.velocity.y,z * speed);
+        rb.velocity = new Vector3(x * speed,0,z * speed);
 
         if (x != 0 || z != 0)
         {
