@@ -11,5 +11,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room1.unity
     guid: a2f5d8b0a68c75a4884e0822ff5ac464
+  - enabled: 1
+    path: Assets/Scenes/Room2.unity
+    guid: 95dfc22f8acd1894e8e6943d9f84f48b
+  - enabled: 1
+    path: Assets/Scenes/Room3.unity
+    guid: 28f612660eba5ed40bce9ffdaae5f7fa
+  - enabled: 1
+    path: Assets/Scenes/Room4.unity
+    guid: 4fdd43799bef261489455c8c70f079ca
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

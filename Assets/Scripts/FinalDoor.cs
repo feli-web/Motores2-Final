@@ -5,12 +5,11 @@ using UnityEngine;
 
 public class FinalDoor : MonoBehaviour
 {
-    public KeyData KeyData;
-    bool key1;
-    bool key2;
-    bool key3;
-    bool key4;
-
+    public GameObject key1;
+    public GameObject key2;
+    public GameObject key3;
+    public GameObject key4;
+    public KeyData keyData;
     Animator animator;
     TextMeshProUGUI actionText;
     public string action;
@@ -18,44 +17,54 @@ public class FinalDoor : MonoBehaviour
 
     void Start()
     {
-        key1 = KeyData.key1;
-        key2 = KeyData.key2;
-        key3 = KeyData.key3;
-        key4 = KeyData.key4;
-
         animator = GetComponent<Animator>();
         actionText = GameObject.FindWithTag("ActionText").GetComponent<TextMeshProUGUI>();
         isClose = false;
+        UpdateKeysVisibility();
     }
 
     void Update()
     {
+        UpdateKeysVisibility();
+
         if (Input.GetKeyDown(KeyCode.N) && isClose)
         {
-            if (key1 && key2 && key3 && key4)
+            if (AllKeysCollected())
             {
                 OpenDoor();
                 actionText.enabled = false;
-
             }
             else
             {
                 actionText.text = "Find all the keys to open the door";
             }
-            
         }
+    }
+
+    void UpdateKeysVisibility()
+    {
+        key1.SetActive(keyData.key1);
+        key2.SetActive(keyData.key2);
+        key3.SetActive(keyData.key3);
+        key4.SetActive(keyData.key4);
+    }
+
+    bool AllKeysCollected()
+    {
+        return keyData.key1 && keyData.key2 && keyData.key3 && keyData.key4;
     }
 
     void OpenDoor()
     {
         animator.Play("OpenDoor");
     }
+
     void CloseDoor()
     {
         animator.Play("CloseDoor");
     }
 
-    public void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -64,12 +73,13 @@ public class FinalDoor : MonoBehaviour
             isClose = true;
         }
     }
-    public void OnTriggerExit(Collider other)
+
+    void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             actionText.enabled = false;
-            isClose = false ;
+            isClose = false;
         }
     }
 }

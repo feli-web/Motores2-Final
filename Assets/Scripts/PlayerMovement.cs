@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Move();
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reestart();
+        }
     }
     void Move()
     {
@@ -44,5 +49,12 @@ public class PlayerMovement : MonoBehaviour
     public void Freeze()
     {
         canMove=false;
+    }
+    public void Reestart()
+    {
+        if (SceneManager.GetActiveScene().buildIndex != 0) 
+        { 
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

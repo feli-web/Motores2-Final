@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -10,6 +8,11 @@ public class Door : MonoBehaviour
     TextMeshProUGUI actionText;
     public string action;
     bool isOpen;
+    public Key requiredKey;
+    public KeyData keyData;
+    public MeshRenderer mr;
+    public Color color;
+
     void Start()
     {
         isOpen = false;
@@ -18,10 +21,19 @@ public class Door : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.N) && isOpen)
+        if (IsButtonPressed(requiredKey))
         {
-            OpenDoor();
-            actionText.enabled = false;
+            mr.material.color = Color.black;
+        }
+        if (!IsButtonPressed(requiredKey))
+        {
+            mr.material.color = color;
+
+            if (Input.GetKeyDown(KeyCode.N) && isOpen)
+            {
+                OpenDoor();
+                actionText.enabled = false;
+            }
         }
     }
 
@@ -38,9 +50,12 @@ public class Door : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            actionText. enabled = true;
-            actionText.text = action;
-            isOpen = true;
+            if (!IsButtonPressed(requiredKey))
+            {
+                actionText.enabled = true;
+                actionText.text = action;
+                isOpen = true;
+            }
         }
     }
     public void OnTriggerExit(Collider other)
@@ -61,4 +76,28 @@ public class Door : MonoBehaviour
         }
     }
 
+    private bool IsButtonPressed(Key key)
+    {
+        switch (key)
+        {
+            case Key.key1:
+                return keyData.key1;
+            case Key.key2:
+                return keyData.key2;
+            case Key.key3:
+                return keyData.key3;
+            case Key.key4:
+                return keyData.key4;
+            default:
+                return false;
+        }
+    }
+
+}
+public enum Key
+{
+    key1,
+    key2,
+    key3,
+    key4
 }

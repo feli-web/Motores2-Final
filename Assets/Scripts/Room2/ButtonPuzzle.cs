@@ -9,6 +9,8 @@ public class ButtonPuzzle : MonoBehaviour
     public bool Button2;
     public bool Button3;
     public List<int> colorOrder = new List<int>();
+    public GameObject[] buttons;
+    public GameObject keyObject;
 
     void Update()
     {
@@ -42,8 +44,12 @@ public class ButtonPuzzle : MonoBehaviour
     {
         if (colorOrder[0] == 3 && colorOrder[1] == 1 && colorOrder[2] == 4 && colorOrder[3] == 2)
         {
-            Debug.Log("Key Obtained");
-            // Add more logic here, like enabling an object or transitioning to a new state.
+            Destroy(buttons[0]);
+            Destroy(buttons[1]);
+            Destroy(buttons[2]);
+            Destroy(buttons[3]);
+            var a = Instantiate(keyObject, new Vector3(0, 1, 9), keyObject.transform.rotation);
+            a.GetComponent<KeyObject>().keyType = KeyType.Key2;
         }
         else
         {

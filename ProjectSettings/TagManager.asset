@@ -7,6 +7,7 @@ TagManager:
   - PlayerModel
   - ActionText
   - ImageFader
+  - Box
   layers:
   - Default
   - TransparentFX

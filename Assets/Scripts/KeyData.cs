@@ -9,4 +9,6 @@ public class KeyData : ScriptableObject
     public bool key2;
     public bool key3;
     public bool key4;
+    public int keysObtained;
+
 }

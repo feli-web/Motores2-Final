@@ -7,6 +7,7 @@ public class ChangeScene : MonoBehaviour
 {
     public int sceneIndex;
     ImageFader imFader;
+    public KeyData keyData;
     void Start()
     {
         imFader = GameObject.FindWithTag("ImageFader").GetComponent<ImageFader>();
@@ -29,6 +30,6 @@ public class ChangeScene : MonoBehaviour
     }
     public void Transport()
     {
-        SceneManager.LoadScene(sceneIndex);
+            SceneManager.LoadScene(sceneIndex);
     }
 }
