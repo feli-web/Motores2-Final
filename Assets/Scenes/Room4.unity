@@ -2791,7 +2791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb43f9e28a329e45b32af5e7db656c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 0
+  sceneIndex: 1
   keyData: {fileID: 11400000, guid: 8a56508b2afc32a4fa11579722208a02, type: 2}
 --- !u!4 &2078137587
 Transform:

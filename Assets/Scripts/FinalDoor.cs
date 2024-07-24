@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -80,6 +78,7 @@ public class FinalDoor : MonoBehaviour
         {
             actionText.enabled = false;
             isClose = false;
+            CloseDoor();
         }
     }
 }

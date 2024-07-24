@@ -12,14 +12,13 @@ public class ButtonPress : MonoBehaviour
     public int buttonNumber;
     public int number;
     public ButtonType requiredButton;
-    MeshRenderer mr;
+    public MeshRenderer mr;
     public Color color;
 
     private void Start()
     {
         actionText = GameObject.FindWithTag("ActionText").GetComponent<TextMeshProUGUI>();
         actionText.enabled = false;
-        mr = GetComponent<MeshRenderer>();
     }
 
     private void Update()
