@@ -5,9 +5,10 @@ using UnityEngine;
 public class BoxCheck : MonoBehaviour
 {
     public bool isPressed;
+    MeshRenderer mr;
     void Start()
     {
-        
+        mr = GetComponent<MeshRenderer>();  
     }
 
     // Update is called once per frame
@@ -15,18 +16,21 @@ public class BoxCheck : MonoBehaviour
     {
         
     }
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Box"))
         {
             isPressed = true;
+            mr.material.color = Color.green;
         }
     }
-    public void OnCollisionExit(Collision collision)
+    public void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.CompareTag("Box"))
         {
             isPressed = false;
+            mr.material.color = Color.red;
+
         }
     }
 }
