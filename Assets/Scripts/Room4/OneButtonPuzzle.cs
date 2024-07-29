@@ -59,16 +59,16 @@ public class OneButtonPuzzle : MonoBehaviour
         switch (keyData.keysObtained)
         {
             case 0:
-                answer = 8;
+                answer = 4;
                 break;
             case 1:
-                answer = 7;
+                answer = 5;
                 break;
             case 2:
                 answer = 6;
                 break;
             case 3:
-                answer = 5;
+                answer = 7;
                 break;
         }
         Debug.Log("Answer: " + answer);

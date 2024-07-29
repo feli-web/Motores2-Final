@@ -14,11 +14,7 @@ public class Menu : MonoBehaviour
     {
         imFader = GameObject.FindWithTag("ImageFader").GetComponent<ImageFader>();
         Invoke("Appear", 2f);
-        kd.key1 = false;
-        kd.key2 = false;
-        kd.key3 = false;
-        kd.key4 = false;
-        kd.keysObtained = 0;
+        
     }
 
     // Update is called once per frame
@@ -26,11 +22,26 @@ public class Menu : MonoBehaviour
     {
         
     }
-    public void Play()
+    public void New()
     {
         imFader.FadeToBlack();
         Invoke("ChangeScene", 2f);
         Invoke("DisAppear", 0f);
+        kd.key1 = false;
+        kd.key2 = false;
+        kd.key3 = false;
+        kd.key4 = false;
+        kd.keysObtained = 0;
+    }
+    public void Load()
+    {
+        if (kd.keysObtained != 0)
+        {
+            imFader.FadeToBlack();
+            Invoke("ChangeScene", 2f);
+            Invoke("DisAppear", 0f);
+            kd.Load();
+        }
     }
     public void Quit()
     {
@@ -42,14 +53,16 @@ public class Menu : MonoBehaviour
     }
     void Appear()
     {
-        menuElements[0].SetActive(true);
-        menuElements[1].SetActive(true);
-        menuElements[2].SetActive(true);
+        for (int i = 0; i < menuElements.Length; i++)
+        {
+            menuElements[i].SetActive(true);
+        }
     }
     void DisAppear()
     {
-        menuElements[0].SetActive(false);
-        menuElements[1].SetActive(false);
-        menuElements[2].SetActive(false);
+        for (int i = 0; i < menuElements.Length; i++)
+        {
+            menuElements[i].SetActive(false);
+        }
     }
 }

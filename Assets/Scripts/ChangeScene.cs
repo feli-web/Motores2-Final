@@ -31,5 +31,6 @@ public class ChangeScene : MonoBehaviour
     public void Transport()
     {
             SceneManager.LoadScene(sceneIndex);
+            keyData.Save();
     }
 }
