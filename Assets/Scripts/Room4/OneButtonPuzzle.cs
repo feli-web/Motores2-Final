@@ -27,7 +27,7 @@ public class OneButtonPuzzle : MonoBehaviour
                 actionText.enabled = false;
                 WriteAnswer();
             }
-            if (Input.GetKeyDown(KeyCode.M))
+            if (Input.GetKeyDown(KeyCode.B))
             {
                 CheckAnswer();
             }
@@ -59,16 +59,16 @@ public class OneButtonPuzzle : MonoBehaviour
         switch (keyData.keysObtained)
         {
             case 0:
-                answer = 4;
+                answer = 8;
                 break;
             case 1:
-                answer = 3;
+                answer = 7;
                 break;
             case 2:
-                answer = 2;
+                answer = 6;
                 break;
             case 3:
-                answer = 1;
+                answer = 5;
                 break;
         }
         Debug.Log("Answer: " + answer);
@@ -78,12 +78,12 @@ public class OneButtonPuzzle : MonoBehaviour
     {
         if (string.IsNullOrEmpty(answerText.text))
         {
-            answerText.text = "1";
+            answerText.text = "0";
         }
         else
         {
             int currentNumber = int.Parse(answerText.text);
-            currentNumber = (currentNumber % 4) + 1; // Cicla a través de 1-4
+            currentNumber = (currentNumber + 1) % 10; 
             answerText.text = currentNumber.ToString();
         }
     }
@@ -101,8 +101,8 @@ public class OneButtonPuzzle : MonoBehaviour
         else
         {
             actionText.enabled = true;
-            actionText.text = "Wrong Answer"; // Cambio el texto de acción a "Wrong Answer"
-            answerText.text = string.Empty; // Resetea el texto de la respuesta
+            actionText.text = "Wrong Answer"; 
+            answerText.text = string.Empty; 
         }
     }
 }

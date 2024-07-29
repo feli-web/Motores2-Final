@@ -41,10 +41,10 @@ public class FinalDoor : MonoBehaviour
 
     void UpdateKeysVisibility()
     {
-        key1.SetActive(keyData.key1);
-        key2.SetActive(keyData.key2);
-        key3.SetActive(keyData.key3);
-        key4.SetActive(keyData.key4);
+        key1.SetActive(!keyData.key1);
+        key2.SetActive(!keyData.key2);
+        key3.SetActive(!keyData.key3);
+        key4.SetActive(!keyData.key4);
     }
 
     bool AllKeysCollected()

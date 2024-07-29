@@ -27,16 +27,13 @@ public class PlayerMovement : MonoBehaviour
         {
             Move();
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Reestart();
-        }
+        ReestartMenu();
     }
     void Move()
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        rb.velocity = new Vector3(x * speed,0,z * speed);
+        rb.velocity = new Vector3(x * speed,rb.velocity.y,z * speed);
 
         if (x != 0 || z != 0)
         {
@@ -50,11 +47,15 @@ public class PlayerMovement : MonoBehaviour
     {
         canMove=false;
     }
-    public void Reestart()
+    public void ReestartMenu()
     {
-        if (SceneManager.GetActiveScene().buildIndex != 0) 
-        { 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

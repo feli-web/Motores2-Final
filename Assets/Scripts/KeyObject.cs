@@ -5,10 +5,11 @@ public class KeyObject : MonoBehaviour
     public KeyData keyData;
     public float rotationSpeed;
     public KeyType keyType; // Agrega esta línea
+    GameObject keyText;
 
     void Start()
     {
-
+        keyText = GameObject.FindWithTag("KeyText");
     }
 
     void FixedUpdate()
@@ -23,6 +24,7 @@ public class KeyObject : MonoBehaviour
             Destroy(gameObject);
             SetKeyTrue(); // Llama al método que maneja las llaves
             keyData.keysObtained++;
+            keyText.GetComponent<Animator>().Play("KeyText");
         }
     }
 

@@ -8,6 +8,7 @@ public class ScrollingBackground : MonoBehaviour
     public float moveSpeedY;
     public int indexScene;
     private MeshRenderer meshrenderer;
+    public KeyData kd;
 
     // Start is called before the first frame update
     void Start()
@@ -37,5 +38,10 @@ public class ScrollingBackground : MonoBehaviour
     public void Reload()
     {
         SceneManager.LoadScene(indexScene);
+        kd.key1 = false;
+        if (kd.keysObtained > 0)
+        {
+            kd.keysObtained--;
+        }
     }
 }

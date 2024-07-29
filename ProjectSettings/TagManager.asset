@@ -8,6 +8,7 @@ TagManager:
   - ActionText
   - ImageFader
   - Box
+  - KeyText
   layers:
   - Default
   - TransparentFX

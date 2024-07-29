@@ -8,11 +8,17 @@ public class Menu : MonoBehaviour
 {
     ImageFader imFader;
     public GameObject[] menuElements;
+    public KeyData kd;
 
     void Start()
     {
         imFader = GameObject.FindWithTag("ImageFader").GetComponent<ImageFader>();
         Invoke("Appear", 2f);
+        kd.key1 = false;
+        kd.key2 = false;
+        kd.key3 = false;
+        kd.key4 = false;
+        kd.keysObtained = 0;
     }
 
     // Update is called once per frame
