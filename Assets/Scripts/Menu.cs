@@ -35,7 +35,7 @@ public class Menu : MonoBehaviour
     }
     public void Load()
     {
-        if (kd.keysObtained != 0)
+        if (PlayerPrefs.GetInt("KeysObtained") != 0)
         {
             imFader.FadeToBlack();
             Invoke("ChangeScene", 2f);
