@@ -8,11 +8,9 @@ public class Final : MonoBehaviour
 {
     public Animator[] chestAnimators;
     public float timeToOpen;
-    GameObject keyText;
     ImageFader imFader;
     void Start()
     {
-        keyText = GameObject.FindWithTag("KeyText");
         StartCoroutine(FinalScene());
         imFader = GameObject.FindWithTag("ImageFader").GetComponent<ImageFader>();
     }
@@ -30,7 +28,6 @@ public class Final : MonoBehaviour
             chestAnimators[i].Play("OpenChest");
             yield return new WaitForSeconds(timeToOpen);
         }
-        keyText.GetComponent<Animator>().Play("KeyText");
         yield return new WaitForSeconds(2.5f);
         imFader.FadeToBlack();
         yield return new WaitForSeconds(2f);
